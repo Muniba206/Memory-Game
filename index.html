@@ -5,11 +5,17 @@
 	<meta name="description" content="Memory Game">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Memory Game</title>
+	<!-- To include Fontawesome icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+
 	<script type="text/javascript" src="app/game.js"></script>
 	<link rel="stylesheet" href="css/game.css">
 
 </head>
 <body>
+<!-- The over all background of the game -->
+<section class="overlay" id="overlay"></section>
 <!-- A welcome pop up to start the game -->
 <section class="start-pop-up hidden" id="start-pop-up">
 	<h1>Start Memory Game<h1>
@@ -20,7 +26,7 @@
 	<h1>Congratulations, you won the game!</h1>
 	<p id="game-info"></p>
 	<p id="time-info"></p>
-	<button id="replay">Replay </button>
+	<button id="replay">Play again!</button>
 
 </section> 
 
@@ -33,7 +39,7 @@
 <section class="score-info">
 	<div class="info">
 		<div class="stars" id="rating">
-			<i class="fas fa-heart"></i>
+			<i class="fas fa-star"></i>
             <p id="visual-stars">3</p>
 		</div>
 		<div class="moves" id="moves">
@@ -41,9 +47,94 @@
 		<div class="timer" id="timer">
 		</div>
 	</div>
-	<div class="reset" id="reset">
+	<div class="reset">
+		<button id="reset">Reset</button>
 	</div>
 </section>
+<!-- Grid to display memory cards -->
+<main class="main-grid" id="grid">
+      <!-- Card 01 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 02 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 03 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 04 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 05 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 06 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 07 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 08 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 09 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 10 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 11 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 12 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 13 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 14 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 15 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+      <!-- Card 16 -->
+      <article class="cards">
+        <div class="card-back"></div>
+        <div class="card-front"></div>
+      </article>
+
+</main>
 
 </body>
 </html>
