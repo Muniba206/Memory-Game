@@ -98,7 +98,116 @@ body {
   display: flex;
 }
 
-.fa-heart,
+.fa-star,
 .fa-hashtag {
   margin: 0 5px;
+  color: orange;
+}
+
+/* Styling cards and deck*/
+.main-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+  margin: 10px auto;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cards {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+
+.cards:hover {
+  cursor: pointer;
+}
+
+.card-back-flip {
+  animation: flip 0.1s ease-in forwards;
+}
+
+.card-front-flip {
+  animation: flip 0.1s 0.1s ease-out forwards reverse;
+}
+
+.card-back-reverse {
+  animation: flip 0.1s ease-in forwards reverse;
+}
+
+.card-front-reverse {
+  animation: flip 0.1s 0.1s ease-out forwards;
+}
+
+.card-win {
+  animation: win ease 0.5s forwards;
+}
+
+.card-front {
+  background: #d7be6a;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(90deg);
+  border: 2px solid #7a737a;
+}
+
+.card-back {
+  background: #de5d19;
+  background: linear-gradient(-90deg, #ED4264, #FFEDBC);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #7a737a;
+  border-radius: 3px;
+}
+
+/*Media queries to make game responsive for different browser widths */
+@media screen and (min-width: 480px) {
+  /* Main Grid */
+  .main-grid {
+    width: 440px;
+    height: 440px;
+  }
+
+  .cards {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+
+@media screen and (min-width: 760px) {
+  /* Main Grid */
+  .main-grid {
+    width: 720px;
+    height: 720px;
+    padding: 20px;
+  }
+
+  .cards {
+    width: 155px;
+    height: 155px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* Main Grid */
+  .main-grid {
+    width: 860px;
+    height: 860px;
+    padding: 20px;
+  }
+
+  .cards {
+    width: 195px;
+    height: 195px;
+  }
 }
