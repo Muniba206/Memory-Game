@@ -4,6 +4,11 @@ The Memory Game Project is all about JavaScript. It is a complete browser-based 
 How The Game Works
 The game board consists of sixteen "cards" arranged in a grid. The deck is made up of eight different pairs of cards, each with different symbols on one side. The cards are arranged randomly on the grid with the symbol face down. The gameplay rules are very simple: flip over two hidden cards at a time to locate the ones that match!
 
+See Live preview of Game here:
+
+https://muniba206.github.io/Memory-Game/
+
+
 Each turn:
 
 The player flips one card over to reveal its underlying symbol.
