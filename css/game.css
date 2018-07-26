@@ -1,3 +1,4 @@
+/* BASIC STYLING */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,31 +6,56 @@
 }
 
 body {
-	background-color: #3a3a3a;
+  background: #292824;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
-/* Styling Start-up Pop-up */
-
-.start-pop-up {
-	min-width: 400px;
-	min-height: 200px;
-	text-decoration: none;
-	text-transform: uppercase;
-	text-align: center;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 4;
-	border: 10px solid lightgrey;
-	border-radius: 10px;
-	background: linear-gradient(-90deg, #ED4264, #FFEDBC);
-	box-shadow: 0 0 30px #231f1c;
-    color: #292824;
-    position: absolute;
+/* ANIMATIONS */
+/* ------------------------ */
+@keyframes flip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(90deg); }
 }
 
-/* Styling start button*/
-#start {
+@keyframes win {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.8; border: 3px solid #94b455; border-radius: 3px; }
+}
+
+/* OVERLAY */
+/* ------------------------ */
+.overlay {
+  background: #3a3a3a;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+}
+
+/* START GAME POPUP */
+/* ------------------------ */
+.start-game-popup,
+.win-popup {
+  text-align: center;
+  width: 300px;
+  height: 150px;
+  border: 10px solid #938884;
+  border-radius: 10px;
+  padding: 15px 8px 8px 8px;
+  background: #eee;
+  box-shadow: 0 0 30px #231f1c;
+  color: #292824;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.start-game-popup button,
+.win-popup button {
   margin: 20px;
   padding: 10px 20px;
   border-left: 20px solid #938884;
@@ -42,17 +68,22 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   box-shadow: 0 2px 10px #231f1c;
+}
+
+.start-game-popup button:hover,
+.win-popup button:hover {
   cursor: pointer;
+  background: #4e4c44;
 }
 
-#start:hover {
-	cursor: pointer;
-	background: #4e4c44;
+/* WIN POPUP */
+/* ------------------------ */
+.win-popup {
+  height: 185px;
 }
 
-.hidden {
-  display: none;
-}
+/* MAIN HEADER */
+/* ------------------------ */
 .main-header {
   padding: 20px 0 10px 0;
 }
@@ -63,8 +94,9 @@ body {
   text-transform: uppercase;
 }
 
-/* STYLING SCORE PANEL */
-.score-info {
+/* INFOS */
+/* ------------------------ */
+.infos {
   display: flex;
   align-items: center;
   width: 90%;
@@ -73,18 +105,18 @@ body {
   justify-content: space-between;
 }
 
-.info {
+.user-play-infos {
   display: flex;
 }
 
-.info > div,
+.user-play-infos > div,
 #reset {
   margin: 0 5px;
   padding: 3px 10px;
-  background: #3a3a3a;
+  background: #1b1a18;
   border: 2px solid #938884;
-  border-radius: 10px;
-  color: #bea77e;
+  border-radius: 20px;
+  color: #938884;
   text-transform: uppercase;
 }
 
@@ -98,13 +130,13 @@ body {
   display: flex;
 }
 
-.fa-star,
+.fa-heart,
 .fa-hashtag {
   margin: 0 5px;
-  color: orange;
 }
 
-/* Styling cards and deck*/
+/* MAIN GRID */
+/* ------------------------ */
 .main-grid {
   display: flex;
   flex-wrap: wrap;
@@ -159,7 +191,7 @@ body {
 
 .card-back {
   background: #de5d19;
-  background: linear-gradient(-90deg, #ED4264, #FFEDBC);
+  background: #938884;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -169,7 +201,48 @@ body {
   border-radius: 3px;
 }
 
-/*Media queries to make game responsive for different browser widths */
+#a1 > .card-front,
+#a2 > .card-front {
+  background-image: url("../images/a-bread.svg");
+}
+
+#b1 > .card-front,
+#b2 > .card-front {
+  background-image: url("../images/b-hot-tea.svg");
+}
+
+#c1 > .card-front,
+#c2 > .card-front {
+  background-image: url("../images/c-hamburger.svg");
+}
+
+#d1 > .card-front,
+#d2 > .card-front {
+  background-image: url("../images/d-french-fries.svg");
+}
+
+#e1 > .card-front,
+#e2 > .card-front {
+  background-image: url("../images/e-chocolate.svg");
+}
+
+#f1 > .card-front,
+#f2 > .card-front {
+  background-image: url("../images/f-biscuit.svg");
+}
+
+#g1 > .card-front,
+#g2 > .card-front {
+  background-image: url("../images/g-pie.svg");
+}
+
+#h1 > .card-front,
+#h2 > .card-front {
+  background-image: url("../images/h-cake.svg");
+}
+
+/* MIN 480 PX */
+/* ------------------------ */
 @media screen and (min-width: 480px) {
   /* Main Grid */
   .main-grid {
@@ -183,7 +256,8 @@ body {
   }
 }
 
-
+/* MIN 760 PX */
+/* ------------------------ */
 @media screen and (min-width: 760px) {
   /* Main Grid */
   .main-grid {
@@ -198,6 +272,8 @@ body {
   }
 }
 
+/* MIN 1024 PX */
+/* ------------------------ */
 @media screen and (min-width: 1024px) {
   /* Main Grid */
   .main-grid {
@@ -210,4 +286,10 @@ body {
     width: 195px;
     height: 195px;
   }
+}
+
+/* INTERACTION */
+/* ------------------------ */
+.hidden {
+  display: none;
 }

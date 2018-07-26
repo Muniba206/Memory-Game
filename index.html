@@ -1,140 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="description" content="Memory Game">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Memory Game</title>
-	<!-- To include Fontawesome icons -->
-	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="utf-8">
+    <!-- Fontawesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
 
-	<script type="text/javascript" src="app/game.js"></script>
-	<link rel="stylesheet" href="css/game.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
 
-</head>
-<body>
-<!-- The over all background of the game -->
-<section class="overlay" id="overlay"></section>
-<!-- A welcome pop up to start the game -->
-<section class="start-pop-up hidden" id="start-pop-up">
-	<h1>Start Memory Game<h1>
-		<button id="start">Start</button>
-</section>
-<!-- A pop up that appears when user wins/completes the game -->
-<section class="end-pop-up hidden" id="end-pop-up">
-	<h1>Congratulations, you won the game!</h1>
-	<p id="game-info"></p>
-	<p id="time-info"></p>
-	<button id="replay">Play again!</button>
+    <!-- Style -->
+    <link rel="stylesheet" href="css/game.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</section> 
-
-<!-- Top most header on the page -->
-<header class="main-header">
-	<h1>Memory Game</h1>
-</header>
-
-<!-- Scoreboard -->
-<section class="score-info">
-	<div class="info">
-		<div class="stars" id="rating">
-			<i class="fas fa-star"></i>
-            <p id="visual-stars">3</p>
-		</div>
-		<div class="moves" id="moves">
-		</div>
-		<div class="timer" id="timer">
-		</div>
-	</div>
-	<div class="reset">
-		<button id="reset">Reset</button>
-	</div>
-</section>
-<!-- Grid to display memory cards -->
-<main class="main-grid" id="grid">
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png">
+    
+    <title>Memory Game</title>
+  </head>
+  <body>
+    <!-- OVERLAY -->
+    <section class="overlay" id="overlay"></section>
+    <!-- START GAME POPUP -->
+    <section class="start-game-popup" id="start-game-popup">
+      <h3>Start Game !</h3>
+      <button id="start-game-btn">Start</button>
+    </section>
+    <!-- WIN POPUP -->
+    <section class="win-popup hidden" id="win-popup">
+      <h2>Game Over!</h2>
+      <p id="info-game"></p>
+      <p id="timer-game"></p>
+      <button id="reload">Play again</button>
+    </section>
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+      <h1>Matching Game</h1>
+    </header>
+    <!-- SECTION: INFOS -->
+    <section class="infos">
+      <!-- user play infos -->
+      <div class="user-play-infos">
+        <!-- Stars -->
+        <div class="stars" id="stars">
+          <i class="fas fa-heart"></i>
+          <p id="visual-stars">3</p>
+        </div>
+        <!-- Moves -->
+        <div class="moves" id="moves">
+          <i class="fas fa-hashtag"></i>
+          <p id="visual-moves">0</p>
+        </div>
+        <!-- Timer -->
+        <div class="timer">
+          <p id="visual-timer">0 : 0</p>
+        </div>
+      </div>
+      <!-- Reset -->
+      <div class="reset">
+        <button id="reset">Reset</button>
+      </div>
+    </section>
+    <!-- MAIN GRID -->
+    <main class="main-grid" id="grid">
       <!-- Card 01 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-diamond" id="card-front-ist"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 02 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-diamond" id="card-front-sec"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 03 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-paper-plane-o" id="card-front-thrd"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 04 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-paper-plane-o" id="card-front-frth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 05 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-cube" id="card-front-fifth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 06 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-cube" id="card-front-sixth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 07 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-anchor" id="card-front-svnth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 08 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-anchor" id="card-front-egth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 09 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-leaf" id="card-front-ninth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 10 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-leaf" id="card-front-tnth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 11 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-bicycle" id="card-front-elevth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 12 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-bicycle" id="card-front-twelth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 13 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-bomb" id="card-front-thrteen"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 14 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-bomb" id="card-front-fourtnth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 15 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-bolt" id="card-front-fiftenth"></div>
+        <div class="card-front"></div>
       </article>
       <!-- Card 16 -->
       <article class="cards">
         <div class="card-back"></div>
-        <div class="card-front fa fa-bolt" id="card-front-sixtnth"></div>
+        <div class="card-front"></div>
       </article>
+    </main>
 
-</main>
-
-</body>
+    <script src="js/game.js"></script>
+  </body>
 </html>
