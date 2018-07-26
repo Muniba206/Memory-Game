@@ -130,9 +130,10 @@ body {
   display: flex;
 }
 
-.fa-heart,
+.fa-star,
 .fa-hashtag {
   margin: 0 5px;
+  color: orange; 
 }
 
 /* MAIN GRID */
