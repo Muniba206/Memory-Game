@@ -1,1 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Memory Game">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Memory Game</title>
+	<script type="text/javascript" src="app/game.js"></script>
+	<link rel="stylesheet" href="css/game.css">
 
+</head>
+<body>
+<!-- A welcome pop up to start the game -->
+<section class="start-pop-up hidden" id="start-pop-up">
+	<h1>Start Memory Game<h1>
+		<button id="start">Start</button>
+</section>
+<!-- A pop up that appears when user wins/completes the game -->
+<section class="end-pop-up hidden" id="end-pop-up">
+	<h1>Congratulations, you won the game!</h1>
+	<p id="game-info"></p>
+	<p id="time-info"></p>
+	<button id="replay">Replay </button>
+
+</section> 
+
+<!-- Top most header on the page -->
+<header class="main-header">
+	<h1>Memory Game</h1>
+</header>
+
+<!-- Scoreboard -->
+<section class="score-info">
+	<div class="info">
+		<div class="stars" id="rating">
+			<i class="fas fa-heart"></i>
+            <p id="visual-stars">3</p>
+		</div>
+		<div class="moves" id="moves">
+		</div>
+		<div class="timer" id="timer">
+		</div>
+	</div>
+	<div class="reset" id="reset">
+	</div>
+</section>
+
+</body>
+</html>
